@@ -1,0 +1,66 @@
+<section>
+    <main>
+        <header>
+            <h1>Calculez vos mensualités</h1>
+            <p>Calculez rapidement le montant de vos mensualités de remboursement
+                de votre investissement locatif. Vous retrouverez en détails le montant
+                du remboursement dû à votre emprunt ainsi que le coût des intérêts.
+            </p>
+        </header>
+        <div class="module-container">
+            <div class="left-side">
+                <div class="input-container">
+                    <label>Montant du bien</label>
+                    <div class="input-montant">
+                        <div class="container">
+                            <div class="euro">
+                                <span>€</span>
+                            </div>
+                            <input type="number" placeholder="100000" v-model="montant"/>
+                        </div>
+                    </div>
+                </div>
+                <img src="../assets/donut.svg" alt="donut" class="donut"></img>
+                <div class="display">
+                    <div class="line">
+                        <div class="dot__red"></div>
+                        <label>Mensualité : {{mensualite}} € / mois</label>
+                    </div>
+                    <div class="line">
+                        <div class="dot__orange"></div>
+                        <label>Coût des intérêts : {{interet}} € / mois</label>
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="container">
+                    <label>Montant de l'apport</label>
+                    <div class="range">
+                        <div id="progress-bar_1" class="progress-bar"></div>
+                        <div class="track"></div>
+                        <input v-model="apportPc" class="slider" step="10" type="range" min="0" max="100" @input="calcul">
+                        <label>{{apport}} € - {{apportPc}} % prix</label>
+                    </div>
+                </div>
+                <div class="container">
+                    <label>Durée de</label>
+                    <div class="range">
+                        <div id="progress-bar_2" class="progress-bar"></div>
+                        <div class="track"></div>
+                        <input v-model="duree" class="slider" type="range" min="0" max="30" @input="calcul">
+                        <label>Durée {{duree}} ans</label>
+                    </div>
+                </div>
+                <div class="container">
+                    <label>Taux d'intérêt</label>
+                    <div class="range">
+                        <div id="progress-bar_3" class="progress-bar"></div>
+                        <div class="track"></div>
+                        <input v-model="taux" class="slider" step="0.05" type="range" min="0" max="3" @input="calcul">
+                        <label>{{taux}} %</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</section>
