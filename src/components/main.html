@@ -16,11 +16,20 @@
                             <div class="euro">
                                 <span>€</span>
                             </div>
-                            <input type="number" placeholder="100000" v-model="montant"/>
+                            <input type="number" placeholder="100000" v-model="montant" />
                         </div>
                     </div>
                 </div>
-                <img src="../assets/donut.svg" alt="donut" class="donut"></img>
+                <!-- <img src="../assets/donut.svg" alt="donut" class="donut"></img> -->
+                <div class="donut-container">
+                    <svg width="90%" height="90%" viewBox="0 0 42 42" class="donut">
+                        <circle class="donut-frame" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#3374FF" stroke-width="3"></circle>
+                        <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff"></circle>
+                        <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#fe605b" stroke-width="3"></circle>
+                        <circle id="donut-segment" class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#fb195e" stroke-dashoffset="25" stroke-width="3"></circle>
+                    </svg>
+                </div>
+
                 <div class="display">
                     <div class="line">
                         <div class="dot__red"></div>
@@ -38,7 +47,8 @@
                     <div class="range">
                         <div id="progress-bar_1" class="progress-bar"></div>
                         <div class="track"></div>
-                        <input v-model="apportPc" class="slider" step="10" type="range" min="0" max="100" @input="calcul">
+                        <input v-model="apportPc" class="slider" step="10" type="range" min="0" max="100"
+                            @input="calcul">
                         <label>{{apport}} € - {{apportPc}} % prix</label>
                     </div>
                 </div>

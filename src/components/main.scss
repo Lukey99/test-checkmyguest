@@ -1,3 +1,5 @@
+@import url(./css/donut.scss);
+
 @mixin center($justify) {
     display: flex;
     justify-content: $justify;
@@ -253,10 +255,11 @@ main {
 @media screen and (max-width: 880px) {
     main{
         min-width: 390px;
-        width: 390px;
-        height: 100%;
+        width: auto;
+        height: auto;
         padding-left: 20px;
         padding-right: 20px;
+        overflow-x: hidden;
         header{
             min-width: 390px;
             width: 390px;
