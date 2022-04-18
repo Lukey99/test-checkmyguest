@@ -5,8 +5,22 @@
     justify-content: center;
     align-items: center;
     svg{
-        .donut-segment{
-            stroke-width: 35px;
+        position: relative;
+        .donut-frame{
+            position: absolute;
         }
     }
+}
+.donut-hole{
+    background-color: rgb(245, 245, 245);
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    z-index: 100;
+    border-radius: 50%;
+    box-shadow: inset 6px 6px 8px 1px rgba(0, 0, 0, 0.050);
+}
+
+.donut-segment{
+    stroke-lineCap: round;
 }
